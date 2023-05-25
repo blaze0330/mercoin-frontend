@@ -1,13 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./layouts";
+import ItemListPage from "./pages/ItemListPage";
+import ItemDetailPage from "./pages/ItemDetailPage";
 
-function App() {
+const App: React.FC = (): JSX.Element => {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<ItemListPage />} />
+          <Route path="/detail/:id" element={<ItemDetailPage />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
-}
+};
 
 export default App;
