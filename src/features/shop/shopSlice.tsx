@@ -26,8 +26,10 @@ export const shopSlice = createSlice({
       state.isLoading = true;
     },
     [getShops.fulfilled.type]: (state, action) => {
-      if (Array.isArray(state.shops)) {
-        state.filteredShops = state.shops.filter((res: ShopItems) =>
+      console.log(action.payload);
+
+      if (action.payload.length > 0) {
+        state.filteredShops = action.payload.filter((res: ShopItems) =>
           res.name
             ?.toLowerCase()
             .includes((action.filterKey || "").toLowerCase())

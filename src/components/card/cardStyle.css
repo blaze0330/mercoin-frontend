@@ -1,0 +1,42 @@
+.card_container {
+  width: 200px;
+  height: 260px;
+  background-color: white;
+  border: none;
+  margin: 3px;
+  cursor: pointer;
+
+  .card_img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+  }
+  .sold {
+    width: 0;
+    height: 0;
+    border: 40px solid transparent;
+    border-top: 0;
+    border-bottom: 40px solid red;
+    color: white;
+    transform: rotate(315deg);
+    top: 0px;
+    margin-left: -26px;
+    margin-top: -6px;
+    position: absolute;
+
+    .sold_letter {
+      position: absolute;
+      margin-top: 20px;
+      margin-left: -15px;
+    }
+  }
+}
+
+.detail_card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 400px;
+}

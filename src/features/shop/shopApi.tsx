@@ -6,7 +6,6 @@ export const getShops = createAsyncThunk<ShopItems[], string>(
   "shop/list",
   async (filterKey?: string) => {
     const response = await getShopsList();
-
     return response.data.data;
   }
 );
